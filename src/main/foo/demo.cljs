@@ -1,10 +1,13 @@
 (ns foo.demo
   (:require ["react-dom" :as rdom]
             [helix.dom :as d]
-            [helix.core :refer [$ defnc]]))
+            [helix.core :refer [$ defnc <>]]
+            [foo.shared :refer [Table]]))
 
 (defnc App []
-  (d/p "this is the app"))
+  (<>
+   (d/h1 "This is the app")
+   ($ Table)))
 
 (defn ^:export start
   []
