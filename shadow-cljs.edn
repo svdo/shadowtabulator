@@ -1,0 +1,11 @@
+{:deps {:aliases [:client]}
+
+ :dev-http {8889 {:root "public-html"}}
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "public-html"
+   :modules {:shared {:entries [foo.shared]}
+             :demo {:entries [foo.demo]
+                    :depends-on #{:shared}}}}}}
